@@ -5,6 +5,10 @@ services:
         build: .
         ports: 
             - "80:80"
+        hostname: bookmark.docker
+        environment: 
+            XDEBUG_MODE: "debug"
+            XDEBUG_CONFIG: "client_host=172.19.0.1"
         volumes:
             - ./html:/var/www/html/
         links:
